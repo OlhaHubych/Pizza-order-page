@@ -1,0 +1,130 @@
+//-------------------------------- variables -------------------------
+$colorBg1: white;
+$colorBg2: #ffcd46;
+$colorText: purple;
+$colorBorder: orange;
+$shadowH1: rgb(150, 21, 21);
+
+$width: 100vw;
+$height: 3em;
+$fontSize: 1em;
+$fontFamily: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+$widthBox: 8em;
+$paddingBox: 1em;
+
+//-------------------------------- main ---------------------------------
+@media screen and (max-width: 600px) {
+    .text-block {
+        h1 {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: $width;
+    height: $height;
+    background: $colorBg2;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    position: fixed;
+    top: 0;
+    .menu-block {
+        display: flex;
+        justify-content: start;
+        a {
+            display: block;
+            width: $widthBox;
+            height: 100%;
+            padding: $paddingBox;
+            color: $colorText;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            border-right: 1px solid $colorBorder;
+
+            &:hover {
+                background-color: $colorBg1;
+                border-bottom: 2px solid darken($colorBorder, 0.7);
+            }
+
+            &:active {
+                background-color: $colorBg1;
+            }
+        }
+    }
+    .text-block {
+        text-align: center;
+        width: $widthBox*2;
+        padding: $paddingBox/2 0;
+        
+        h1 {
+            margin: 0 auto;
+            color: $colorText;
+            font-size: 1.5*$fontSize;
+            letter-spacing: 0.05*$fontSize;
+            font-family: $fontFamily; 
+        }  
+    }
+    
+}
+
+.dropdown-block {
+    position: relative;
+    display: inline-block;
+    button {
+        display: block;
+        width: $widthBox;
+        height: 100%;
+        margin: 0;
+        padding: $paddingBox;
+        background: $colorBg2;
+        color: $colorText;
+        font-size: $fontSize;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-right: 1px solid $colorBorder;
+    }
+    &:hover {
+        .dd-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0%);
+            z-index: 1;
+            
+            a {
+                border-bottom: 1px solid $colorBorder;
+                &:hover {
+                    background-color: $colorBg2; 
+                }
+                &:last-of-type {
+                    border-bottom: none;
+                }
+                &:active {
+                    background-color: $colorBg2;
+                }
+            }
+        }
+        button {
+            background: $colorBg1;
+            border-bottom: 2px solid $colorBorder;
+        }
+    }
+}
+
+.dd-content {
+    position: absolute;
+    width: $widthBox;
+    background-color: $colorBg1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+    z-index: -1;
+    transform: translateY(-1em);
+    visibility: hidden; 
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}

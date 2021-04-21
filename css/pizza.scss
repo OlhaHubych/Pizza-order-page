@@ -1,0 +1,13 @@
+//--------------------------- import -------------------------------
+@import 'nav';
+@import 'article';
+@import 'footer';
+
+//--------------------------- main ---------------------------------
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
