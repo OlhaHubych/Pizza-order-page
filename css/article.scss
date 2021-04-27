@@ -24,28 +24,6 @@ $imageBGArt: url(../img/vectorstock_11619985.jpg);
 @import 'mixin';
 
 //-------------------------------- main --------------------------
-@media screen and (min-width: 873px) {
-    .price-box {
-        @include height($heightPrice - 1.5);
-        p {
-            @include font-size($fontSize);
-        }
-    }
-    .delivery {
-        @include width($widthDelivery);
-    }
-}
-@media screen and (max-width: 872px) {
-    .price-box {
-        input {
-            width: 30%;
-        }
-    }
-    .delivery {
-        @include width($widthDelivery+(100% - $widthDelivery));
-    }
-}
-
 article {
     margin-top: 2.3em;
     height: $heidhtArt;
@@ -177,13 +155,6 @@ article {
 
 }
 
-@media screen and (min-width: 974px) and (max-width: 1127px) {
-    .food-container {
-        .card {
-            width: 50%;
-        }
-    }
-}
 
 .check {
     position: absolute;
@@ -262,6 +233,40 @@ article {
             label {
                 margin-right: 0.2em;
             }
+        }
+    }
+}
+@media  screen and (max-width: 568px) {
+    article {
+        margin-top: 4em;
+    }
+}
+@media screen and (min-width: 873px) {
+    .price-box {
+        @include height($heightPrice - 1.5);
+        p {
+            @include font-size($fontSize);
+        }
+    }
+    .delivery {
+        @include width($widthDelivery);
+    }
+}
+@media screen and (max-width: 872px) {
+    .price-box {
+        input {
+            width: 30%;
+        }
+    }
+    .delivery {
+        @include width($widthDelivery+(100% - $widthDelivery));
+    }
+}
+
+@media screen and (min-width: 974px) and (max-width: 1127px) {
+    .food-container {
+        .card {
+            width: 50%;
         }
     }
 }

@@ -5,7 +5,7 @@ $colorText: purple;
 $colorBorder: orange;
 $shadowH1: rgb(150, 21, 21);
 
-$width: 100vw;
+$width: 100%;
 $height: 3em;
 $fontSize: 1em;
 $fontFamily: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -14,14 +14,6 @@ $widthBox: 8em;
 $paddingBox: 1em;
 
 //-------------------------------- main ---------------------------------
-@media screen and (max-width: 600px) {
-    .text-block {
-        h1 {
-            display: none;
-        }
-    }
-}
-
 .nav {
     display: flex;
     justify-content: space-between;
@@ -32,6 +24,7 @@ $paddingBox: 1em;
     font-family: $fontFamily;
     position: fixed;
     top: 0;
+    z-index: 1;
     .menu-block {
         display: flex;
         justify-content: start;
@@ -58,6 +51,7 @@ $paddingBox: 1em;
     }
     .text-block {
         text-align: center;
+        height: $height;
         width: $widthBox*2;
         padding: $paddingBox/2 0;
         
@@ -127,4 +121,22 @@ $paddingBox: 1em;
     visibility: hidden; 
     opacity: 0;
     transition: all 0.3s ease-in-out 0s;
+}
+@media screen and (max-width: 568px) {
+    .nav {
+        flex-direction: column-reverse;
+        height: 2*$height;
+    }
+    .menu-block {
+        height: $height;
+    }
+    .nav .text-block {
+        width: $width;
+        height: $height;
+        align-self: center;
+        border-bottom: 1px solid orange;
+    }
+    .dropdown-block {
+        border-left: 1px solid orange;
+    }
 }

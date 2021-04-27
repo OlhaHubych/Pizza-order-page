@@ -3,27 +3,6 @@
   src: url("../font/Comfortaa/static/Comfortaa-Bold.ttf");
 }
 
-@media screen and (min-width: 873px) {
-  .price-box {
-    height: 2.5em;
-  }
-  .price-box p {
-    font-size: 1.3em;
-  }
-  .delivery {
-    width: 65%;
-  }
-}
-
-@media screen and (max-width: 872px) {
-  .price-box input {
-    width: 30%;
-  }
-  .delivery {
-    width: 100%;
-  }
-}
-
 article {
   margin-top: 2.3em;
   height: -webkit-fit-content;
@@ -203,12 +182,6 @@ article fieldset .btn-submit:active {
           box-shadow: 2px 3px 10px orange;
 }
 
-@media screen and (min-width: 974px) and (max-width: 1127px) {
-  .food-container .card {
-    width: 50%;
-  }
-}
-
 .check {
   position: absolute;
   z-index: -1;
@@ -305,5 +278,38 @@ article fieldset .btn-submit:active {
 
 .delivery .contacts .contact-item label {
   margin-right: 0.2em;
+}
+
+@media screen and (max-width: 568px) {
+  article {
+    margin-top: 4em;
+  }
+}
+
+@media screen and (min-width: 873px) {
+  .price-box {
+    height: 2.5em;
+  }
+  .price-box p {
+    font-size: 1.3em;
+  }
+  .delivery {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 872px) {
+  .price-box input {
+    width: 30%;
+  }
+  .delivery {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 974px) and (max-width: 1127px) {
+  .food-container .card {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=article.css.map */
